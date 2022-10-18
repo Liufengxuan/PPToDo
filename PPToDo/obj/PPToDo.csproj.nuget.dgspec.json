@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fengxuan\\Desktop\\project\\PPToDo\\PPToDo\\PPToDo.csproj": {}
+    "C:\\Users\\fengxuan\\Desktop\\新建文件夹\\PPToDo\\PPToDo\\PPToDo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fengxuan\\Desktop\\project\\PPToDo\\PPToDo\\PPToDo.csproj": {
+    "C:\\Users\\fengxuan\\Desktop\\新建文件夹\\PPToDo\\PPToDo\\PPToDo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fengxuan\\Desktop\\project\\PPToDo\\PPToDo\\PPToDo.csproj",
+        "projectUniqueName": "C:\\Users\\fengxuan\\Desktop\\新建文件夹\\PPToDo\\PPToDo\\PPToDo.csproj",
         "projectName": "PPToDo",
-        "projectPath": "C:\\Users\\fengxuan\\Desktop\\project\\PPToDo\\PPToDo\\PPToDo.csproj",
+        "projectPath": "C:\\Users\\fengxuan\\Desktop\\新建文件夹\\PPToDo\\PPToDo\\PPToDo.csproj",
         "packagesPath": "C:\\Users\\fengxuan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fengxuan\\Desktop\\project\\PPToDo\\PPToDo\\obj\\",
+        "outputPath": "C:\\Users\\fengxuan\\Desktop\\新建文件夹\\PPToDo\\PPToDo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fengxuan\\AppData\\Roaming\\NuGet\\NuGet.Config",

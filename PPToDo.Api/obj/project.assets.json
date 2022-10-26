@@ -229,11 +229,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fengxuan\\Desktop\\新建文件夹\\PPToDo\\PPToDo.Api\\PPToDo.Api.csproj",
+      "projectUniqueName": "C:\\Users\\fengxuan\\Desktop\\project\\PPToDo\\PPToDo.Api\\PPToDo.Api.csproj",
       "projectName": "PPToDo.Api",
-      "projectPath": "C:\\Users\\fengxuan\\Desktop\\新建文件夹\\PPToDo\\PPToDo.Api\\PPToDo.Api.csproj",
+      "projectPath": "C:\\Users\\fengxuan\\Desktop\\project\\PPToDo\\PPToDo.Api\\PPToDo.Api.csproj",
       "packagesPath": "C:\\Users\\fengxuan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fengxuan\\Desktop\\新建文件夹\\PPToDo\\PPToDo.Api\\obj\\",
+      "outputPath": "C:\\Users\\fengxuan\\Desktop\\project\\PPToDo\\PPToDo.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fengxuan\\AppData\\Roaming\\NuGet\\NuGet.Config",

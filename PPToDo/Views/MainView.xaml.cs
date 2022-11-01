@@ -13,20 +13,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PPToDo
+namespace PPToDo.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainView : Window
     {
-        public MainWindow()
+        public MainView()
         {
             InitializeComponent();
 
             btn_min.Click += (s, e) => { this.WindowState = WindowState.Minimized; };
-            btn_max.Click+=(s, e) => { this.WindowState= this.WindowState == WindowState.Maximized? WindowState.Normal : WindowState.Maximized; };
-            btn_close.Click+=(s,e) => { this.Close(); };
+            btn_max.Click += (s, e) => { this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized; };
+            btn_close.Click += (s, e) => { this.Close(); };
 
             colorZone.MouseMove += (s, e) =>
             {
@@ -39,6 +39,6 @@ namespace PPToDo
             colorZone.MouseDoubleClick += (s, e) => { this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized; };
         }
 
-      
+
     }
 }

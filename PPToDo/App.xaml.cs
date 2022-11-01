@@ -17,7 +17,7 @@ namespace PPToDo
     {
         protected override Window CreateShell()
         {
-          return Container.Resolve<MainWindow>("MainWindow"); 
+          return Container.Resolve<Views.MainView>("MainWindow"); 
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

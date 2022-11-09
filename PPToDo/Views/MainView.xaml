@@ -3,8 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:prism="http://prismlibrary.com/"
         xmlns:local="clr-namespace:PPToDo"
-        xmlns:prsim="http://prismlibrary.com/"
+        xmlns:ext="clr-namespace:PPToDo.Extensions"   
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
@@ -15,7 +16,7 @@
         TextOptions.TextFormattingMode="Ideal" 
         TextOptions.TextRenderingMode="Auto"    
         AllowsTransparency="True"
-        prsim:ViewModelLocator.AutoWireViewModel="True"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="768" Width="1280">
@@ -42,14 +43,13 @@
 
                                 <StackPanel Orientation="Horizontal" Background="Transparent">
                                     <materialDesign:PackIcon Margin="15,0" Kind="{Binding Icon}"/>
-                                    <TextBlock Margin="10,0" Text="{Binding Title}"/>
+                                    <TextBlock Margin="10,0" Text="{Binding Title}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </DockPanel>
             </materialDesign:DrawerHost.LeftDrawerContent>
-
             <DockPanel>
                 <materialDesign:ColorZone Padding="16"
                                           x:Name="colorZone"   
@@ -99,6 +99,7 @@
 
                     </DockPanel>
                 </materialDesign:ColorZone>
+                <ContentControl prism:RegionManager.RegionName="{x:Static ext:PrismManager.MainViewRegionName}"/>
             </DockPanel>
         </materialDesign:DrawerHost>
     </materialDesign:DialogHost>

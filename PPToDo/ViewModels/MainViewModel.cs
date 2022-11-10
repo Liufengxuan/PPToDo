@@ -20,15 +20,30 @@ namespace PPToDo.ViewModels
             CreateMenuBar();
             NavigateCommand = new DelegateCommand<MenuBar>(Navigate);
             this.regionManager = regionManager;
+            GoBackCommand = new DelegateCommand(() => {
+                if (journal!=null&& journal.CanGoBack)
+                    journal.GoBack();
+            });
+            GoForwardCommand = new DelegateCommand(() =>
+            {
+                if (journal != null && journal.CanGoForward)
+                    journal.GoForward();
+            });
         }
 
         private void Navigate(MenuBar obj)
         {
             if (obj == null || string.IsNullOrWhiteSpace(obj.NameSpace)) return;
-            regionManager.Regions[PrismManager.MainViewRegionName].RequestNavigate(obj.NameSpace);
+            regionManager.Regions[PrismManager.MainViewRegionName].RequestNavigate(obj.NameSpace, back => {
+                journal = back.Context.NavigationService.Journal;//每次切换更新导航日志
+            });
+         
         }
         private readonly IRegionManager regionManager;
+        private IRegionNavigationJournal journal;
         public DelegateCommand<MenuBar> NavigateCommand { get; set; }
+        public DelegateCommand GoBackCommand { get; set; }
+        public DelegateCommand GoForwardCommand { get; set; }
 
         private ObservableCollection<MenuBar> menuBars;
 

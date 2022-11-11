@@ -4,9 +4,71 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PPToDo.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" FontFamily="微软雅黑">
     <Grid>
-        <TextBlock FontSize="80" Text="Index"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Margin="15,10" Text="&lt;user1> 你好，今天是2022-11-11 星期5" FontSize="22"/>
+
+        <ItemsControl Grid.Row="1" ItemsSource="{Binding TaskBar}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="4"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="10"  Background="{Binding Color}" CornerRadius="10">
+                        <Grid>
+                            <StackPanel Margin="30,10" >
+                                <materialDesign:PackIcon Width="30" Height="30" Margin="15,0" Kind="{Binding Icon}"/>
+                                <TextBlock Text="{Binding Title}" Margin="0,15" FontSize="15"/>
+                                <TextBlock Text="{Binding Content}" FontWeight="Bold" FontSize="40"/>
+                            </StackPanel>
+                            <Canvas ClipToBounds="True" >
+                                <Border 
+                                    Canvas.Top="10" 
+                                    Canvas.Right="-50" 
+                                    Width="120" 
+                                    Height="120"
+                                    Background="#FFFFFF"
+                                    CornerRadius="60"
+                                    Opacity="0.2"/>
+                                <Border 
+                                    Canvas.Top="80" 
+                                    Canvas.Right="-30" 
+                                    Width="120" 
+                                    Height="120"
+                                     CornerRadius="60"
+                                    Background="#FFFFFF"
+                                    Opacity="0.3"/>
+                            </Canvas>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Margin="10,0" CornerRadius="10" Background="#BEBEBE" Opacity="0.1" />
+            <DockPanel >
+                <DockPanel Margin="10,0" LastChildFill="False">
+                    <TextBlock Text="待办事项"/>
+                    <Button Content="+"/>
+                </DockPanel>
+            </DockPanel>
+            
+            <Border Grid.Column="1" Margin="10,0" CornerRadius="10" Background="#BEBEBE" Opacity="0.1" />
+        </Grid>
     </Grid>
 </UserControl>

@@ -36,9 +36,17 @@ namespace PPToDo.Views
                 }
 
             };
-            colorZone.MouseDoubleClick += (s, e) => { this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized; };
+            colorZone.MouseDoubleClick += (s, e) => { 
+                this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized; 
+         
+            };
+
+            menuBar.SelectionChanged += MenuBar_SelectionChanged;
         }
 
-
+        private void MenuBar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            drawerHost.IsLeftDrawerOpen = false;
+        }
     }
 }

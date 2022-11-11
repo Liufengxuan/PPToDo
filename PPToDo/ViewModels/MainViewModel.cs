@@ -44,6 +44,7 @@ namespace PPToDo.ViewModels
         public DelegateCommand<MenuBar> NavigateCommand { get; set; }
         public DelegateCommand GoBackCommand { get; set; }
         public DelegateCommand GoForwardCommand { get; set; }
+  
 
         private ObservableCollection<MenuBar> menuBars;
 

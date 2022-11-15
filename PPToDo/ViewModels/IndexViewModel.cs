@@ -15,6 +15,7 @@ namespace PPToDo.ViewModels
         {
             TaskBar = new ObservableCollection<TaskBar>();
             CreateTaskBars();
+            CreateTestData();
         }
 
         private ObservableCollection<TaskBar> taskBar;
@@ -25,12 +26,43 @@ namespace PPToDo.ViewModels
         }
 
 
+        private ObservableCollection<ToDoDto> toDoDtos;
+
+        public ObservableCollection<ToDoDto> ToDoDtos
+        {
+            get { return toDoDtos; }
+            set { toDoDtos = value; }
+        }
+
+        private ObservableCollection<MemoDto> memoDtos;
+
+        public ObservableCollection<MemoDto> MemoDtos
+        {
+            get { return memoDtos; }
+            set { memoDtos = value; }
+        }
+
+
+
+
         void CreateTaskBars()
         {
             TaskBar.Add(new TaskBar() { Icon = "ClockFast", Title = "汇总", Content = "9", Color = "#FF0CA0FF", Target = "" });
             TaskBar.Add(new TaskBar() { Icon = "ClockCheckOutline", Title = "已完成", Content = "9", Color = "#FF1ECA3A", Target = "" });
             TaskBar.Add(new TaskBar() { Icon = "ChartLineVariant", Title = "完成比例", Content = "100%", Color = "#FF02C6DC", Target = "" });
             TaskBar.Add(new TaskBar() { Icon = "PlaylistStar", Title = "备忘录", Content = "19", Color = "#FFFFA000", Target = "" });
+        }
+
+
+        void CreateTestData()
+        {
+            ToDoDtos = new ObservableCollection<ToDoDto>();
+            MemoDtos=new ObservableCollection<MemoDto>();
+            for (int i = 0; i < 10; i++)
+            {
+                ToDoDtos.Add(new ToDoDto() { Title = "待办"+i, Content = "正在处理" });
+                memoDtos.Add(new MemoDto() { Title = "备忘" + i, Content = "我的密码" });
+            }
         }
     }
 }
